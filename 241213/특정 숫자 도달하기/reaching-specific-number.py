@@ -12,4 +12,4 @@ arr_new = arr[0:end]
 all_sum = 0
 for i in arr_new:
     all_sum += i
-print(all_sum, all_sum/len(arr_new))
+print(all_sum, round(all_sum/len(arr_new),1))
