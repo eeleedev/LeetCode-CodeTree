@@ -12,7 +12,7 @@ def final_result():
         for i in range(n-1, -1, -1):
             print(arr[i], end=" ")
     else:
-        for i in range(n-1, -1, -1):
+        for i in range(len(arr)-1, -1, -1):
             print(arr[i], end=" ")
 
 final_result()
