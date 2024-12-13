@@ -4,10 +4,11 @@ def find_index():
     for elem in arr:
         if elem == 0:
             return arr.index(elem)
+        return -1
 
 def final_result():
     n = find_index()
-    if n != None:
+    if n != -1:
         for i in range(n-1, -1, -1):
             print(arr[i], end=" ")
     else:
