@@ -9,7 +9,7 @@ def find_index():
 def final_result():
     n = find_index()
     if n != -1:
-        for i in range(len(arr)-2, -1, -1):
+        for i in range(len(arr)-1, -1, -1):
             print(arr[i], end=" ")
     else:
         for i in range(len(arr)-2, -1, -1):
