@@ -14,7 +14,7 @@ def lcm(arr):
         return arr[0]
     new_value = arr[0]*arr[1]/gcd(arr[0],arr[1])
     arr =[new_value] + arr[2:]
-    return int(lcm(arr))
+    return lcm(arr)
 
-print(lcm(arr))
+print(int(lcm(arr)))
     
