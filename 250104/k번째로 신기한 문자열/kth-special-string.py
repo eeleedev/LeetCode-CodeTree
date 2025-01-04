@@ -5,7 +5,7 @@ word_collector = []
 
 # Write your code here!
 for word in str:
-    if t in word:
+    if word.startswith(t):
         word_collector.append(word)
 
 sorted_collector = sorted(word_collector)
