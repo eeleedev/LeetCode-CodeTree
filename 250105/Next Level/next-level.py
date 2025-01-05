@@ -8,6 +8,6 @@ class modifier:
         self.level = level
 
 user1 = modifier()
-user2 = modifier('hello',28)
+user2 = modifier(user2_id,user2_level)
 print("user",user1.ID,"lv",user1.level)
 print("user",user2.ID,"lv",user2.level)
