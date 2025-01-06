@@ -7,9 +7,9 @@ class Student:
 
 n = int(input())
 arr = [tuple(input().split()) for _ in range(n)]
-students = [Student(name,kor,eng,math) for name,kor,eng,math in arr]
+students = [Student(name,int(kor),int(eng),int(math)) for name,kor,eng,math in arr]
 
-students.sort(key=lambda x: (x.kor, x.eng, x.math), reverse=True) # 기본은 내림차순
+students.sort(key=lambda x: (-x.kor, -x.eng, -x.math)) # 기본은 내림차순
 
 for student in students:
     print(student.name, student.kor, student.eng, student.math)
