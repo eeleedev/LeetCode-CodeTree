@@ -1,7 +1,7 @@
 arr = []
 while True:
     n = float(input())
-    if n < 30:
+    if (n < 30) or (n < 20):
         arr.append(n)
     else:
         temp = 0
