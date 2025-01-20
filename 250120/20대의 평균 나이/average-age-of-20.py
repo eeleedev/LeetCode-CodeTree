@@ -4,7 +4,7 @@ while True:
     if n >= 20 and n <=29:
         arr.append(n)
 
-    if n < 21 or n > 29:
+    if n < 20 or n > 29:
         temp = 0
         for figure in arr:
             temp += figure
