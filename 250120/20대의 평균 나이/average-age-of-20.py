@@ -1,9 +1,10 @@
 arr = []
 while True:
     n = float(input())
-    if (n < 30) or (n < 20):
+    if n >= 20 and n <=29:
         arr.append(n)
-    else:
+
+    if n < 21 or n > 29:
         temp = 0
         for figure in arr:
             temp += figure
