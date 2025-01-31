@@ -1,0 +1,7 @@
+str1, str2 = input().split()
+if len(str1) > len(str2):
+    print(str1, len(str1))
+elif len(str1) == len(str2):
+    print('same')
+else:
+    print(str2, len(str2))
