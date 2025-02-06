@@ -10,5 +10,7 @@ def magic_num(n):
             print("Yes")
         else:
             print("No")
+    else:
+        print("No")
 
 magic_num(n)
