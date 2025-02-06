@@ -1,8 +1,8 @@
 a, b = map(int, input().split())
 
 def tsn(num):
-    temp1 = num // 10
-    temp2 = num % 10
+    temp1 = num % 10
+    temp2 = num // 10
     if temp1 == 3 or temp1 == 6 or temp1 == 9:
         return True
     elif temp2 == 3 or temp2 == 6 or temp2 == 9:
