@@ -1,20 +1,15 @@
 a, b = map(int, input().split())
 
-def tsn(num):
-    temp = list(str(num))
-    for a in temp:
-        if a == '3' or a=='6' or a=='9':
-            return True
-    else:
-        return False
+def count_3s6s9s(a, b):
+    # 1️⃣ 3의 배수 개수 계산
+    count_multiples_of_3 = (b // 3) - ((a - 1) // 3)
 
-def count_func(a,b):
-    counter = 0
-    for i in range(a,b+1):
-        if i%3==0:
-                counter += 1
-        elif tsn(i):
-            counter += 1
-    return counter
+    # 2️⃣ 3, 6, 9가 포함된 숫자 개수 (단, 3의 배수는 제외)
+    count_contains_3s6s9s = sum(
+        1 for i in range(a, b + 1) if i % 3 != 0 and any(c in "369" for c in str(i))
+    )
 
-print(count_func(a,b))
+    # 3️⃣ 두 개의 개수를 합쳐 반환
+    return count_multiples_of_3 + count_contains_3s6s9s
+
+print(count_3s6s9s(a, b))
