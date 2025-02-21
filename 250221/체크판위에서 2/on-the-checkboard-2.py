@@ -1,23 +1,21 @@
-R, C = map(int, input().split())
-grid = [list(input().split()) for _ in range(R)]
+# 변수 선언 및 입력
+n, m = tuple(map(int, input().split()))
+grid = [
+    input().split()
+    for _ in range(n)
+]
 
-# Write your code here!
-count = 0  # 점프 가능한 경우의 수 저장
-
-# 모든 시작 위치 (i, j)에서 가능한 점프 탐색
-for i in range(R):
-    for j in range(C):
-        start_color = grid[i][j]  # 현재 위치 색상
-        destinations = []  # 점프 가능한 도착 위치 리스트
-        
-        # 가능한 모든 점프 위치 탐색 (nr > i, nc > j)
-        for nr in range(i + 1, R):  # 아래 방향 이동
-            for nc in range(j + 1, C):  # 오른쪽 방향 이동
-                if grid[nr][nc] != start_color:  # 색이 다르면 점프 가능
-                    destinations.append((nr, nc))
-        
-        # 점프 가능한 위치가 정확히 2개일 때만 count 증가
-        if len(destinations) == 2:
-            count += 1
-
-print(count)
+# 이동 시에 행과 열이 전부 증가하도록
+# 모든 쌍을 다 잡아봅니다.
+cnt = 0
+for i in range(1, n):
+    for j in range(1, m):
+        for k in range(i + 1, n - 1):
+            for l in range(j + 1, m - 1):
+                # 그 중 색깔이 전부 달라지는 경우에만 개수를 세줍니다.
+                if grid[0][0] != grid[i][j] and \
+                   grid[i][j] != grid[k][l] and \
+                   grid[k][l] != grid[n - 1][m - 1]:
+                    cnt += 1
+                        
+print(cnt)
