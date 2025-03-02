@@ -22,4 +22,4 @@ for i in range(n):
         total_sum += arr_2d[i][j]
 
 print()
-print(total_sum/8)
+print(round(total_sum/8,2))
