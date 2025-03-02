@@ -7,13 +7,13 @@ for _ in range(n):
 
 for i in range(n):
     average = sum(arr_2d[i])/k
-    print(round(average,2),end=' ')
+    print(round(average,1),end=' ')
 
 print()
 
 for i in range(k):
     average = (arr_2d[0][i]+arr_2d[1][i])/n
-    print(round(average,2),end=' ')
+    print(round(average,1),end=' ')
 
 total_sum = 0
 
@@ -22,4 +22,4 @@ for i in range(n):
         total_sum += arr_2d[i][j]
 
 print()
-print(round(total_sum/8,2))
+print(round(total_sum/8,1))
