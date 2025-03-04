@@ -8,21 +8,24 @@ for _ in range(n):
 
 # Please write your code here.
 lines = [0] * 202 # -100 ~ 100
-start_point = 100 # 0 좌표를 100으로 매핑
+OFFSET = 100 # 0 좌표를 100으로 매핑
+
+current = 0
 
 for i in range(n):
-    if dir[i] == 'R':
-        for _ in range(x[i]):
-            lines[start_point] += 1
-            start_point += 1  # 오른쪽으로 이동
-    elif dir[i] == 'L':
-        for _ in range(x[i]):
-            lines[start_point] += 1
-            start_point -= 1  # 왼쪽으로 이동
+    move = x[i] if dir[i] == 'R' else -x[i]
+    prev = current
+    new = current + move
 
-count = 0
-for i in range(len(lines)):
-    if lines[i] >= 2:
-        count += 1
+    start = min(prev, new)
+    end = max(prev, new)
 
-print(count)
+    # start부터 end-1까지 각 정수 j에 대해 구간 j→j+1 방문
+    for j in range(start, end):
+        lines[j + OFFSET] += 1
+
+    current = new
+
+# 2번 이상 방문된 선분(구간)의 개수
+answer = sum(1 for cnt in lines if cnt >= 2)
+print(answer)
