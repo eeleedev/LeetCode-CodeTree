@@ -21,8 +21,8 @@ for i in range(n):
             start_point -= 1  # 왼쪽으로 이동
 
 count = 0
-for c in lines:
-    if c >= 2:
+for i in range(len(lines)):
+    if lines[i] >= 2:
         count += 1
 
 print(count)
